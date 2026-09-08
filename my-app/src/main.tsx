@@ -8,3 +8,10 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 )
+
+/* ROUTES*/
+
+import EditarProdtuo from './routes/EditarProdutos/index.tsx'
+import Produto from './routes/Produtos/index.tsx'
+import Home from './routes/Home/index.tsx'
+import Error from './routes/Error/index.tsx'
