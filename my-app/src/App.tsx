@@ -5,9 +5,9 @@ import Rodape from "./components/Rodape/Rodape";
 export default function App() {
   return (
     <div>
-      <Cabecalho/>
-      <Conteudo/>
-      <Rodape/>
+      <Cabecalho />
+      <Conteudo />
+      <Rodape />
     </div>
   )
 }
