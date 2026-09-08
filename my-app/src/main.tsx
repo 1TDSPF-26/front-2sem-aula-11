@@ -19,6 +19,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <RouterProvider router={router} />
-
+    
   </StrictMode>
 )

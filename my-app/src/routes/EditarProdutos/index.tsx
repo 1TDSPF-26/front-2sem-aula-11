@@ -1,7 +1,7 @@
 export default function EditarProdutos() {
   
   //Para Alterar o título da página:
-  document.title = 'Editar Produto'
+  document.title = 'Editar-Produto'
 
   return (
     <main>
