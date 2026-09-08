@@ -1,108 +1,71 @@
 import { useState } from "react";
 import imgQuadrado from "../../img/quadrado.png";
-import lampada from "../../img/lampada.png";
-import lampadaapagada from "../../img/lampada-apagada.png"
+import LigaDesliga from "../LigaDesliga/LigaDesliga.tsx";
+import VerDataNasc from "../VerDataNasc/VerDataNasc";
 
 export default function Conteudo() {
   let numeroComum = 0;
 
-  // Estado do React
-  const [numeroState, setNumeroState] = useState(0);
+  //Estado do React
 
-  // Estado da lâmpada
-  const [lampadaAcesa, setLampadaAcesa] = useState(false);
+  const [mostraSection, setMostraSection] = useState(true);
 
-  function aumentaVariavelComum() {
+  function aumentaVariavelComun() {
     numeroComum = numeroComum + 1;
 
+    //O valor muda e aparece no console
     console.log("Variavel comum:", numeroComum);
+    //Más não aparecerá na página
   }
 
-  function aumentarUseState() {
-    setNumeroState((valorAtual) => valorAtual + 1);
+  function verSection() {
+    //O React altera o estado e renderiza novamente a página/componente.
 
-    console.log("Valor do estado:", numeroState);
-  }
-
-  function alternarLampada() {
-    setLampadaAcesa((estadoAtual) => !estadoAtual);
+    setMostraSection(!mostraSection);
   }
 
   return (
     <main>
-      <div>
-        <h2>Exemplo de variável comum</h2>
-
-        <p>Variável comum: {numeroComum}</p>
-
-        <button onClick={aumentaVariavelComum}>Aumentar variável comum</button>
-      </div>
-
-      <div>
-        <h2>Exemplo de UseState</h2>
-
-        <p>Valor do state: {numeroState}</p>
-
-        <button onClick={aumentarUseState}>Aumentar o valor do state</button>
-      </div>
-
       <section>
-        <h2>Conteúdo principal</h2>
-
+        <LigaDesliga />
+        <VerDataNasc />
+      </section>
+      <section>
+        <h2>Conteúdo</h2>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe
-          aspernatur temporibus dolorum doloribus eaque. Consequatur
-          necessitatibus, voluptate odit facilis suscipit explicabo praesentium
-          incidunt blanditiis fugit sequi, quos aperiam tenetur ducimus!
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+          perspiciatis expedita beatae, at tempora praesentium nihil fuga illum
+          aut, maiores consequuntur porro repellendus sit laudantium, nemo
+          explicabo modi molestiae ipsa?
         </p>
       </section>
-
       <section>
         <h2>Imagem com link externo</h2>
-
         <figure>
           <img
-            src="https://placehold.co/600x400/FFFFF0/FFFFFF/png"
+            src="https://placehold.co/600x400/e1e1e1/000000/png"
             alt="Imagem de exemplo de 600x400px"
           />
-
-          <figcaption>Imagem de exemplo 600x400px</figcaption>
+          <figcaption>Imagem de exemplo de 600x400px</figcaption>
         </figure>
       </section>
-
       <section>
         <h2>Imagem com referência interna</h2>
-
         <figure>
           <img src={imgQuadrado} alt="Imagem quadrada 400x400px" />
-
           <figcaption>Imagem de exemplo 400x400px</figcaption>
         </figure>
       </section>
-
-      <section>
-        <h2>Lâmpada controlada por useState</h2>
-
+      <section style={{ display: mostraSection ? "block" : "none" }}>
+        <h2>Imagem com referência interna estática</h2>
         <figure>
-          <img
-            style={{ width: "200px", height: "auto" }}
-            src={
-              lampadaAcesa
-                ? "/image/lampada.png"
-                : "/image/lampada-apagada.png"
-            }
-            alt={lampadaAcesa ? "Lâmpada acesa" : "Lâmpada apagada"}
-          />
-
-          <figcaption>
-            {lampadaAcesa ? "Lâmpada acesa" : "Lâmpada apagada"}
-          </figcaption>
+          <img src="/image/lampada.png" alt="Lampada de Desenho." />
+          <figcaption>Imagem de exemplo estática - Lâmpada</figcaption>
         </figure>
-
-        <button onClick={alternarLampada}>
-          {lampadaAcesa ? "Apagar lâmpada" : "Acender lâmpada"}
-        </button>
       </section>
+      <button onClick={verSection}>
+        {mostraSection ? "Ocultar" : "Mostrar"}
+      </button>
     </main>
   );
 }
