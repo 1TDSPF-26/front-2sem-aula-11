@@ -33,7 +33,7 @@ export default function Conteudo(){
             </div>
 
             <div>
-                <h2>Exemplo de vvariável de UseState</h2>
+                <h2>Exemplo de variável de UseState</h2>
                 <p>Valor do state: {numeroState}</p>
                 <button onClick={aumentarUseState}>Aumentar valor do state</button>
             </div>
