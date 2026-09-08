@@ -1,4 +1,3 @@
-import React from 'react'
 
 export default function Error() {
     /* Para alterar o título da página */
