@@ -8,6 +8,7 @@ export default function Conteudo() {
           src="https://placehold.co/600x400/FFFFF0/FFFFFF/png"
           alt="Imagem ilustrativa do conteúdo"
         />
+        
 
         <figcaption>
           Imagem utilizada para representar o conteúdo da aplicação.
