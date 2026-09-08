@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div>
       <Cabecalho />
-      <Conteudo />
+      <Conteudo/>
       <Rodape />
     </div>
   );
